@@ -1,17 +1,17 @@
 import os
-from Employee import Employee
 
-def viewEmployee():
-    if os.path.exists("venv/data/emp.txt"):
-        file = open("venv/data/emp.txt", "r")
+
+def view_employee():
+    if os.path.exists("data/emp.txt"):
+        file = open("data/emp.txt", "r")
         txt = file.readline()
         if not txt:
             print("File empty \nDELETING FILE")
             file.close()
-            os.remove("venv/data/emp.txt")
+            os.remove("data/emp.txt")
             return
         file.close()
-        file = open("venv/data/emp.txt", "r")
+        file = open("data/emp.txt", "r")
         i = 1
         j = True
         k = 0
@@ -28,16 +28,16 @@ def viewEmployee():
             print("\n")
             i = 1
         file.close()
-    elif os.path.exists("../Employee/venv/data/emp1.txt"):
-        file = open("../Employee/venv/data/emp1.txt", "r")
+    elif os.path.exists("data/emp1.txt"):
+        file = open("data/emp1.txt", "r")
         txt = file.readline()
         if not txt:
             print("File empty \nDELETING FILE")
             file.close()
-            os.remove("../Employee/venv/data/emp1.txt")
+            os.remove("data/emp1.txt")
             return
         file.close()
-        file = open("../Employee/venv/data/emp1.txt", "r")
+        file = open("data/emp1.txt", "r")
         i = 1
         j = True
         k = 0
