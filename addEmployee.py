@@ -4,9 +4,8 @@ from Employee import Employee
 
 def add(file):
     print("Add employee?")
-    add_check = input("Y for Yes\\N for No\n")
-    lower_add = add_check.lower()
-    while lower_add == "y":
+    add_check = input("Y for Yes\\N for No\n").lower()
+    while add_check == "y":
         print("Add new Employee: \n")
         first_name = input("First Name: ")
         last_name = input("Last Name: ")
@@ -23,8 +22,7 @@ def add(file):
             + "\nPhone Number: " + emp1.phone_number + "\nEmail: " + emp1.email
             + "\nDepartment: " + emp1.dept + "\nSalary: " + emp1.salary + "\n")
         print("Add employee?")
-        add_check = input("Y for Yes\\N for No\n")
-        lower_add = add_check.lower()
+        add_check = input("Y for Yes\\N for No\n").lower()
         del emp1
     file.close()
 

@@ -1,7 +1,11 @@
 import os
+FILE_TXT = "data/emp.txt"
+FILE1_TXT = "data/emp1.txt"
 
 
-def remove(file, file2):
+def remove(file_txt, file1_txt):
+    file = open(file_txt, "r")
+    file2 = open(file1_txt, "at")
     delete_another = 't'
     employee_to_del = 't'
     while delete_another != 'n' and employee_to_del != 'q':
@@ -30,21 +34,17 @@ def remove(file, file2):
             i = 1
             k += 1
         file.close()
-        os.remove("data/emp.txt")
+        os.remove(file_txt)
         delete_another = 'n'
     file2.close()
 
 
 def remove_employee():
-    if os.path.exists("data/emp.txt"):
-        file = open("data/emp.txt", "r")
-        file2 = open("data/emp1.txt", "at")
-        remove(file, file2)
+    if os.path.exists(FILE_TXT):
+        remove(FILE_TXT, FILE1_TXT)
 
-    elif os.path.exists("data/emp1.txt"):
-        file = open("data/emp1.txt", "r")
-        file2 = open("data/emp.txt", "at")
-        remove(file, file2)
+    elif os.path.exists(FILE1_TXT):
+        remove(FILE1_TXT, FILE_TXT)
 
     else:
-        print("No database file exist")
+        print("NO database file exists")
